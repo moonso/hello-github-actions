@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.6]
-        mongodb-version: [4.0]
+        mongodb-version: ["4.0"]
   
     steps:
     
@@ -21,9 +21,9 @@ jobs:
     
     # Set up mongodb
     - name: Start MongoDB
-      uses: superchargejs/mongodb-github-action@v1.1.0
+      uses: wbari/start-mongoDB@v0.2
       with:
-        mongodb-version: ${{ matrix.mongodb-version}}
+        mongoDBVersion: ${{ matrix.mongodb-version}}
     
     - name: Install dependencies
       run: |
