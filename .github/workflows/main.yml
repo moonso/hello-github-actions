@@ -1,4 +1,4 @@
-name: A workflow for my Hello World file
+name: hello-github-actions
 on: [push, pull_request]
 
 jobs:
