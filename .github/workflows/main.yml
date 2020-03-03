@@ -18,11 +18,11 @@ jobs:
       with:
         python-version: ${{ matrix.python-version}}
     
-        # Set up mongodb
-    # - name: Start MongoDB
-    #   uses: superchargejs/mongodb-github-action@v1
-    #   with:
-    #     mongodb-version: ${{ matrix.mongodb-version}}
+    # Set up mongodb
+    - name: Start MongoDB
+      uses: superchargejs/mongodb-github-action@v1
+      with:
+        mongodb-version: ${{ matrix.mongodb-version}}
     
     - name: Install dependencies
       run: |
