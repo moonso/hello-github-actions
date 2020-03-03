@@ -19,6 +19,8 @@ VERSION = 0.1
 # What packages are required for this module to be executed?
 REQUIRED = [
     "pytest",
+    "pytest-cov",
+    "coveralls",
     "pymongo==3.7.1",
 ]
 
