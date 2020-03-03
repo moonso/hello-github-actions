@@ -1,12 +1,35 @@
-name: A workflow for my Hello World file
-on: push
+name: First actions
+on: [push, pull_request]
 
 jobs:
   build:
-    name: Hello world action
     runs-on: ubuntu-latest    
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+        mongodb-version: ["3.6","4.0","4.2"]
+  
     steps:
-    - uses: actions/checkout@v1
-    - uses: ./action-a
-      env:
-        MY_NAME: "Moonso"
+    
+    - name: Git checkout
+      uses: actions/checkout@v1
+  
+    - name: Set up Python ${{ matrix.python-version}}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version}}
+    
+    # Set up mongodb
+    - name: Start MongoDB
+      uses: wbari/start-mongoDB@v0.2
+      with:
+        mongoDBVersion: ${{ matrix.mongodb-version}}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python setup.py install
+    
+    - name: Test with pytest
+      run: |
+        py.test -rxs tests/
