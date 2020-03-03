@@ -5,5 +5,5 @@ This course will walk you through writing your first action and using it with a 
 
 **Ready to get started? Navigate to the first issue.**
 
-[badge_img]: https://github.com/moonso/hello-github-actions/workflows/First%20actions/badge.svg
-[badge_url]: https://github.com/moonso/hello-github-actions/actions?query=workflow%3AFirst%20actions
+[badge_img]: https://github.com/moonso/hello-github-actions/workflows/Build/badge.svg
+[badge_url]: https://github.com/moonso/hello-github-actions/actions?query=workflow%3ABuild+branch%3Amaster
