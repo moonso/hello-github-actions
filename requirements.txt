@@ -1,0 +1,4 @@
+pytest
+pytest-cov
+coveralls
+pymongo==3.7.1
