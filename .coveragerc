@@ -1,0 +1,3 @@
+[run]
+include = */actions/*
+omit = *tests*
