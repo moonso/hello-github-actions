@@ -19,24 +19,11 @@ jobs:
           auto-update-conda: true
           python-version: ${{ matrix.python-version }}
       
-      - name: Conda info
+      - name: Install spring
         shell: bash -l {0}
-        run: conda info
+        run: conda install -c bioconda spring
 
       - name: Conda list
         shell: pwsh
         run: conda list
-      
-      - name: Set up Python ${{ matrix.python-version}}
-        uses: actions/setup-python@v1
-        with:
-          python-version: ${{ matrix.python-version}}
-      
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          python setup.py install
-      
-      - name: Test with pytest
-        run: |
-          py.test -rxs tests/
+  
