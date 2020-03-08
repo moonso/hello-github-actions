@@ -21,12 +21,16 @@ jobs:
       
       - name: Install spring
         shell: bash -l {0}
-        run: conda install -c bioconda spring
+        run: |
+          conda activate test
+          conda install -c bioconda spring
 
       - name: Conda list
         shell: pwsh
         run: conda list
 
       - name: Test Spring
-        run: spring
+        run: |
+          conda activate test
+          spring
   
