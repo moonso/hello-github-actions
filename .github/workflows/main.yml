@@ -31,5 +31,5 @@ jobs:
       - name: Test Spring
         shell: bash -l {0}
         run: |
-          spring
+          spring -h
   
